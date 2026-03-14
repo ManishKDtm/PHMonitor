@@ -7,21 +7,44 @@ PHMonitor::PHMonitor(uint8_t pin)
 
 void PHMonitor::begin()
 {
-  pinMode(_pin,INPUT);
+  pinMode(_pin, INPUT);
+
+#if defined(ESP32)
+  analogReadResolution(12);
+#endif
 }
 
 float PHMonitor::readVoltage()
 {
-  int raw = analogRead(_pin);
+  const int samples = 10;
+  int buffer[samples];
+
+  for(int i=0;i<samples;i++)
+  {
+    buffer[i] = analogRead(_pin);
+    delay(10);
+  }
+
+  int sum = 0;
+
+  for(int i=0;i<samples;i++)
+  {
+    sum += buffer[i];
+  }
+
+  float avg = sum / (float)samples;
 
 #if defined(ESP32)
-  float voltage = raw * 3.3 / 4095.0;
+
+  float voltage = avg * 3.3 / 4095.0;
 
 #elif defined(ESP8266)
-  float voltage = raw * 3.3 / 1023.0;
+
+  float voltage = avg * 3.3 / 1023.0;
 
 #else
-  float voltage = raw * 5.0 / 1023.0;
+
+  float voltage = avg * 5.0 / 1023.0;
 
 #endif
 
@@ -30,9 +53,12 @@ float PHMonitor::readVoltage()
 
 float PHMonitor::readPH()
 {
-  float v = readVoltage();
+  float voltage = readVoltage();
 
-  float ph = 7 + (2.5 - v) * 3.5;
+  float ph = 7 + (2.5 - voltage) * 3.5;
+
+  if(ph < 0) ph = 0;
+  if(ph > 14) ph = 14;
 
   return ph;
 }
