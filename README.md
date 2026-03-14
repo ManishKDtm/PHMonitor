@@ -27,5 +27,20 @@ Documents/Arduino/libraries
 
 3. Restart Arduino IDE
 
+
+pH Probe
+   ↓
+pH Signal Board
+   ↓
+Arduino ADC
+   ↓
+PHMonitor Library
+   ↓
+Serial / OLED / LCD
+
+
+
+
+
 ## Author
 Manish Kumar Das
