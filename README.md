@@ -6,35 +6,29 @@
 ![Platforms](https://img.shields.io/badge/Platforms-Arduino%2C%20ESP32%2C%20ESP8266-blue)
 ![License](https://img.shields.io/github/license/ManishKDtm/PHMonitor)
 
-PHMonitor is a **professional Arduino library** for **pH monitoring** with support for:
-
-- Analog pH sensors  
-- Temperature compensation (optional, using Dallas/DS18B20 or onboard sensor)  
-- OLED and LCD displays  
-- Easy calibration for educational and IoT projects  
-
-This library is designed for **students, hobbyists, and makers** who want **quick, reliable water pH monitoring** with real-time readings.
+**PHMonitor** is a professional Arduino library for **pH monitoring** with optional **temperature compensation**, ready-to-use **OLED and LCD displays**, and simple **one-step calibration**. Perfect for students, hobbyists, and IoT water quality projects.
 
 ---
 
 ## 🔹 Features
 
 - Read raw pH values from analog pH probes  
-- Automatic temperature compensation for accurate pH readings  
+- Optional **temperature compensation** using Dallas/DS18B20 or onboard sensor  
 - Display readings on **16x2 LCD** or **128x64 OLED**  
-- Simple **one-step calibration** (pH 7 reference solution)  
-- Compatible with **ESP32**, **ESP8266**, and standard Arduino boards  
-- Ready-to-use **example sketches**  
-- Minimal dependencies, easy integration in any project  
+- Easy **one-step calibration** (pH 7 reference solution)  
+- Compatible with **ESP32**, **ESP8266**, and Arduino boards  
+- Minimal dependencies for students and quick prototyping  
 
 ---
 
 ## 📦 Installation
 
-1. Open **Arduino IDE** → **Sketch → Include Library → Manage Libraries**  
+**Arduino IDE:**
+
+1. Open **Sketch → Include Library → Manage Libraries**  
 2. Search for `PHMonitor` and click **Install**  
 
-Or manually:
+**Manual Installation:**
 
 1. Download the [latest release](https://github.com/ManishKDtm/PHMonitor/releases/latest)  
 2. Open Arduino IDE → **Sketch → Include Library → Add .ZIP Library**  
@@ -44,39 +38,26 @@ Or manually:
 
 ## 📌 Wiring / Connections
 
-| Sensor/Module       | ESP32 Pin | ESP8266 Pin | Notes |
+| Sensor / Module     | ESP32 Pin | ESP8266 Pin | Notes |
 |--------------------|-----------|------------|-------|
-| pH Analog Sensor    | A0 (default) | A0 | Connect analog output |
-| DS18B20 / Temp      | 4 | 4 | Optional, only if using temp compensation |
-| 16x2 LCD (I2C)      | SDA/SCL | SDA/SCL | 0x27 address default |
-| 128x64 OLED (I2C)   | SDA/SCL | SDA/SCL | 0x3C address default |
-| Buzzer              | 18 | 18 | Optional alert |
-| Buttons             | 5, 19 | 5, 19 | Optional for page / upload |
+| pH Analog Sensor    | A0        | A0         | Connect analog output |
+| DS18B20 / Temp      | 4         | 4          | Optional for temp compensation |
+| 16x2 LCD (I2C)      | SDA/SCL   | SDA/SCL    | Default 0x27 |
+| 128x64 OLED (I2C)   | SDA/SCL   | SDA/SCL    | Default 0x3C |
+| Buzzer              | 18        | 18         | Optional alert |
+| Buttons             | 5, 19     | 5, 19      | Optional for page / upload |
 
-> Note: Update pins in examples if different.
+> Update pins in examples if your wiring is different.
 
 ---
 
 ## ⚙️ Usage Examples
 
-The library comes with several example sketches:
-
-| Example | Description |
-|---------|-------------|
-| `01_Calibration` | Calibrate pH sensor to pH 7 automatically |
-| `02_BasicPH` | Basic pH reading without temperature compensation |
-| `03_TempCompensation` | Read pH with temperature compensation |
-| `04_OLED_Display` | Display readings on OLED |
-| `05_LCD_Display` | Display readings on 16x2 LCD |
-
----
-
-### Example: Basic pH Reading
+### 1️⃣ Basic pH Reading
 
 ```cpp
 #include <PHMonitor.h>
 
-// Create object
 PHMonitor phSensor(A0); // Analog pin
 
 void setup() {
