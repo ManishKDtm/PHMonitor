@@ -53,3 +53,4 @@ Serial / OLED / LCD
 
 ## Author
 Manish Kumar Das
+![License](https://img.shields.io/github/license/ManishKDtm/PHMonitor)
