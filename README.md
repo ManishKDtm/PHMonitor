@@ -1,5 +1,14 @@
 # PHMonitor
 
+[![Arduino Library Version](https://img.shields.io/badge/Arduino-Library%20Manager-brightgreen)](https://www.arduino.cc/en/Guide/Libraries#toc3)
+![GitHub stars](https://img.shields.io/github/stars/ManishKDtm/PHMonitor?style=social)
+![GitHub release](https://img.shields.io/github/v/release/ManishKDtm/PHMonitor?style=plastic)
+![Platforms](https://img.shields.io/badge/Platforms-Arduino%2C%20ESP32%2C%20ESP8266-blue)
+
+Arduino library for **pH monitoring**, **temperature compensation**, and OLED/LCD display. Easy to use for students and IoT projects.
+
+# PHMonitor
+
 Open-source pH monitoring library for Arduino, ESP8266 and ESP32.
 
 ## Features
