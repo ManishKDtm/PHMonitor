@@ -40,12 +40,10 @@
 
 | Sensor / Module     | ESP32 Pin | ESP8266 Pin | Notes |
 |--------------------|-----------|------------|-------|
-| pH Analog Sensor    | A0        | A0         | Connect analog output |
-| DS18B20 / Temp      | 4         | 4          | Optional for temp compensation |
+| pH Analog Sensor    | analog pin | analog pin| Connect analog output |
+| DS18B20 / Temp      | "         | "          | Optional for temp compensation |
 | 16x2 LCD (I2C)      | SDA/SCL   | SDA/SCL    | Default 0x27 |
-| 128x64 OLED (I2C)   | SDA/SCL   | SDA/SCL    | Default 0x3C |
-| Buzzer              | 18        | 18         | Optional alert |
-| Buttons             | 5, 19     | 5, 19      | Optional for page / upload |
+| 128x64 OLED (I2C)   | SDA/SCL   | SDA/SCL    | Default 0x3C
 
 > Update pins in examples if your wiring is different.
 
