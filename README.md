@@ -5,6 +5,7 @@
 ![GitHub release](https://img.shields.io/github/v/release/ManishKDtm/PHMonitor?style=plastic)
 ![Platforms](https://img.shields.io/badge/Platforms-Arduino%2C%20ESP32%2C%20ESP8266-blue)
 ![License](https://img.shields.io/github/license/ManishKDtm/PHMonitor)
+
 **PHMonitor** is a professional Arduino library for **pH monitoring** with optional **temperature compensation**, ready-to-use **OLED and LCD displays**, and simple **one-step calibration**. Perfect for students, hobbyists, and IoT water quality projects.
 
 ---
