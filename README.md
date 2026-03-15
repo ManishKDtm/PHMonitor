@@ -51,7 +51,7 @@
 
 ## ⚙️ Usage Examples
 
-### 1️⃣ Basic pH Reading
+### 1️⃣  Temperature compensated pH Reading
 
 ```cpp
 #include <PHMonitor.h>
